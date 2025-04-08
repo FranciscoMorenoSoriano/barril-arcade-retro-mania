@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Arcade retro colors
+				arcade: {
+					'blue': '#0081ff',
+					'red': '#ff004d',
+					'yellow': '#ffec27',
+					'green': '#00e436',
+					'orange': '#ffa300',
+					'purple': '#83769c',
+					'pink': '#ff77a8',
+					'brown': '#7e2553',
+					'dark': '#1a0d26'
 				}
+			},
+			fontFamily: {
+				'arcade': ['Press Start 2P', 'cursive'],
+				'pixel': ['VT323', 'monospace']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -69,24 +86,26 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
+				'arcade-blink': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
+				},
+				'arcade-jump': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				}
 			},
 			animation: {
+				'arcade-blink': 'arcade-blink 2s ease-in-out infinite',
+				'arcade-jump': 'arcade-jump 1s ease-in-out infinite',
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
